@@ -1,0 +1,25 @@
+{
+  "name": "blog.30c27b.com",
+  "version": "0.0.0",
+  "description": "30c27b's personal blog",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "nodemon server.js"
+  },
+  "author": {
+    "name": "Antoine Coulon",
+    "url": "https://antoinecoulon.com",
+    "email": "contact@cln.ac"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "markdown-it": "^10.0.0",
+    "mongoose": "^5.9.7",
+    "serve-favicon": "^2.5.0",
+    "shortid": "^2.2.15"
+  }
+}
