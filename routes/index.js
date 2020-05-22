@@ -3,7 +3,7 @@ const post = require('../models/post');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-	post.find({status: 'LISTED'}, (err, posts) => {
+	post.find({status: 'PUBLIC'}, (err, posts) => {
 		if (err) res.render('index.hbs', { pageName: 'blog', msg: "cannot load posts" });
 		else if (!posts.length) res.render('index.hbs', { pageName: 'blog', msg: "nothing to see here yet" });
 		else res.render('index.hbs', { pageName: 'blog', posts: posts.map(post => post.to_display_format()) });
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:post', (req, res) => {
-	post.findOne({ uid: req.params.post, $or: [{status: 'LISTED'}, {status: 'UNLISTED'}] }, (err, post) => {
+	post.findOne({ uid: req.params.post, $or: [{status: 'PUBLIC'}, {status: 'UNLISTED'}] }, (err, post) => {
 		if (err) res.render('post.hbs', { pageName: 'error', msg: "cannot load post" });
 		else if (!post) res.render('post.hbs', { pageName: 'error', msg: "this post does not exist; yet" });
 		else {

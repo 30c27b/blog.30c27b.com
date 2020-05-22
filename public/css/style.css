@@ -1,79 +1,278 @@
-body
-{
-	background-color: #111111;
+/* fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* colors setup */
+
+:root {
+	--primary-color:#1b1b1b;
+	--secondary-color:#ffffff;
+	--light-color:#3b3b3b;
+	--accent-color:#30c27b;
 }
 
-.main{
-	justify-content: center;
-	align-items: center;
-}
+/* global classes */
 
-.title-box
-{
-	width: 100%;
-	margin-top: 10vh;
-	text-align: center;
-}
 
-.main-box
+.f-title
 {
-	width: 60%;
-	margin: auto;
-	margin-top: 5vh;
-	margin-bottom: 5vh;
-	padding: 5%;
-	border-radius: 20px;
-	text-align: left;
-	background-color: ivory;
-}
-
-.shad-ef
-{
-	text-shadow: 2px 2px 1px #ff0000, 3px 3px 1px #003cff;
-	color: #ffffff;
-}
-
-.lang-tag
-{
-	font-size: 0.7em;
-	margin: 1em;
-	padding: 0.2em;
-	border-radius: 3px;
-}
-
-.dump
-{
-	color: #444444;
-}
-
-h1
-{
-	font-size: 4em;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Open Sans';
 	font-weight: 400;
 }
 
-h2
+.f-text
 {
-	font-size: 2em;
-	font-family: 'Courier New', Courier, monospace;
-	font-weight: 50;
+	font-family: 'Open Sans';
+	font-weight: 300;
 }
 
-h3
+.f-code
 {
-	font-size: 1.5em;
 	font-family: 'Courier New', Courier, monospace;
-	font-weight: 100;
 }
 
-h4
+.c-primary
 {
-	font-size: 1.3em;
-	font-family: 'Courier New', Courier, monospace;
+	color: var(--primary-color);
+	transition: color 1000ms;
+
+}
+
+.c-secondary
+{
+	color: var(--secondary-color);
+	transition: color 1000ms;
+
+}
+
+.c-accent
+{
+	color: var(--accent-color);
+	transition: color 1000ms;
+}
+
+.exp {
+	position: relative;
+	bottom: 1ex; 
+	font-size: 80%;
+}
+
+.h-link
+{
+	background: none;
+	border-bottom: none;
+}
+
+.h-link:hover
+{
+	background: none;
+}
+
+/* tags */
+
+body
+{
+	background-color: var(--primary-color);
+	transition: background-color 1000ms;
+	display:flex; 
+	flex-direction:column; 
 }
 
 a
 {
-	color: black;
+	color: inherit;
+	text-decoration: none;
+	transition: background-color 200ms;
+	border-bottom: 3px solid var(--accent-color);
+}
+
+a:hover
+{
+	background-color: var(--accent-color);
+}
+
+/* specific classes */
+
+.main
+{
+	min-height: 95vh;
+}
+
+.theme-button
+{
+	position: absolute;
+	top: 1vh;
+	right: 1vh;
+	color: var(--secondary-color);
+}
+
+.theme-button:hover
+{
+	color: var(--accent-color);
+}
+
+.header
+{
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	margin-top: 5vh;
+}
+
+.title
+{
+	margin-bottom: 0px;
+	font-size: 2.5em;
+	display: block;
+
+}
+
+.subtitle
+{
+	font-size: 1.8em;
+	font-size: 100;
+	display: block;
+	margin: 3vh;
+}
+
+.page
+{
+	margin: auto;
+	width: 40%;
+	min-width: 300px;
+	text-align: center;
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+}
+
+.post-meta-title
+{
+	font-size: 1.5em;
+}
+
+.post-meta
+{
+	text-align: right;
+	margin: 10px;
+	margin-bottom: 5vh;
+}
+
+.contact-link
+{
+	display: block;
+	margin: 4vh;
+}
+
+.copyright
+{
+	width: 90%;
+	text-align: center;
+	margin: 10px;
+	margin-left: 5%;
+	font-size: 0.8em;
+}
+
+.post-card
+{
+	margin: 5vh;
+	text-align: left;
+}
+
+.post-title
+{
+	font-size: 1.4em;
+	display: block;
+	margin-bottom: 10px;
+}
+
+/* markdown tags */
+
+.content
+{
+	text-align: justify;
+	font-family: 'Open Sans';
+	line-height: 1.5em;
+	color: var(--secondary-color);
+	transition: color 1000ms;
+	transition: background-color 1000ms;
+	font-weight: 300;
+}
+
+.content h1
+{
+	font-size: 1.4em;
+	transition: color 1000ms;
+}
+
+.content h2
+{
+	font-size: 1.3em;
+	transition: color 1000ms;
+}
+
+.content h3
+{
+	font-size: 1.2em;
+	transition: color 1000ms;
+}
+
+.content h4
+{
+	font-size: 1.1em;
+	transition: color 1000ms;
+}
+
+.content p
+{
+	font-size: 0.9em;
+	transition: color 1000ms;
+}
+
+.content code
+{
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 400;
+	background-color: var(--light-color);
+	transition: color 1000ms;
+	transition: background-color 1000ms;
+}
+
+.content strong
+{
+	font-weight: 900;
+	transition: color 1000;
+}
+
+.content pre
+{
+	overflow-x:scroll;
+	background-color: var(--light-color);
+	transition: color 1000;
+	transition: background-color 1000ms;
+}
+
+.content blockquote
+{
+	border-left: 3px solid var(--accent-color);
+	padding-left: 15px;
+}
+
+.content img
+{
+	max-width: 100%;
+}
+
+.content table
+{
+	width: 100%;
+	border: 3px solid var(--accent-color);
+	border-collapse: collapse;
+}
+
+.content th, td
+{
+	border: 1px solid var(--secondary-color);
+	text-align: left;
+	padding: 5px;
+	font-family: 'Courier New', Courier, monospace;
 }
