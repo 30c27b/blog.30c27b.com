@@ -75,7 +75,8 @@ body
 	background-color: var(--primary-color);
 	transition: background-color 1000ms;
 	display:flex; 
-	flex-direction:column; 
+	flex-direction:column;
+	margin: 0;
 }
 
 a
@@ -148,13 +149,21 @@ a:hover
 .post-meta-title
 {
 	font-size: 1.5em;
+	text-align: center;
+	margin-bottom: 40px;
+	display: block;
 }
 
 .post-meta
 {
-	text-align: right;
+	text-align: left;
 	margin: 10px;
 	margin-bottom: 5vh;
+}
+
+.meta-info
+{
+	display: block;
 }
 
 .contact-link

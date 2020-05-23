@@ -37,11 +37,14 @@ const post_schema = new mongoose.Schema({
 	}
 }, { collection: 'posts' });
 
+const weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
 post_schema.methods.to_display_format = function () {
 
 	return {
 		title: this.title,
-		date: this.created_at.getUTCDate() + "_" + this.created_at.getMonth() + "_" + this.created_at.getFullYear(),
+		date: weekdays[this.created_at.getDay()] + " " + this.created_at.getUTCDate() + " " + months[this.created_at.getMonth()] + " " + this.created_at.getFullYear(),
 		views: this.views,
 		link: "/" + this.uid,
 		content: marked(this.content, {
