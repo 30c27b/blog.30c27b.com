@@ -68,6 +68,11 @@
 	background: none;
 }
 
+.block
+{
+	display: block;
+}
+
 /* tags */
 
 body

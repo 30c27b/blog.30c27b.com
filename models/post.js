@@ -6,6 +6,10 @@ const post_schema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
+	description: {
+		type: String,
+		required: true
+	},
 	created_at:
 	{
 		type: Date,
@@ -44,6 +48,7 @@ post_schema.methods.to_display_format = function () {
 
 	return {
 		title: this.title,
+		description: this.description,
 		date: weekdays[this.created_at.getDay()] + " " + this.created_at.getUTCDate() + " " + months[this.created_at.getMonth()] + " " + this.created_at.getFullYear(),
 		views: this.views,
 		link: "/" + this.uid,
